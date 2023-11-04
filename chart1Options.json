@@ -1,0 +1,95 @@
+{
+  "series": [
+    {
+      "name": "Others",
+      "group": "perword",
+      "data": [491, 426, 396, 439, 386, 363, 404, 445]
+    },
+    {
+      "name": "website",
+      "group": "perword",
+      "data": [44, 42, 47, 43, 43, 45, 46, 44]
+    },
+    {
+      "name": "video",
+      "group": "perword",
+      "data": [48, 44, 45, 38, 45, 42, 39, 35]
+    },
+    {
+      "name": "design",
+      "group": "perword",
+      "data": [91, 82, 79, 88, 72, 91, 66, 68]
+    },
+    {
+      "name": "marketing",
+      "group": "perword",
+      "data": [31, 33, 29, 32, 24, 28, 23, 20]
+    },
+    {
+      "name": "app",
+      "group": "perword",
+      "data": [32, 48, 42, 37, 46, 51, 39, 55]
+    },
+    {
+      "name": "data",
+      "group": "perword",
+      "data": [31, 34, 35, 29, 17, 18, 18, 16]
+    },
+    {
+      "name": "content",
+      "group": "perword",
+      "data": [29, 28, 21, 20, 18, 17, 16, 21]
+    },
+    {
+      "name": "youtube",
+      "group": "perword",
+      "data": [23, 23, 16, 19, 24, 22, 17, 17]
+    },
+    {
+      "name": "wordpress",
+      "group": "perword",
+      "data": [22, 18, 14, 22, 15, 15, 13, 15]
+    },
+    {
+      "name": "google",
+      "group": "perword",
+      "data": [20, 16, 13, 16, 24, 17, 11, 22]
+    },
+    {
+      "name": "Total",
+      "group": "total",
+      "data": [862, 794, 737, 783, 714, 709, 692, 758]
+    }
+  ],
+  "xaxis": {
+    "categories": [
+      "0:00",
+      "1:00",
+      "2:00",
+      "3:00",
+      "4:00",
+      "5:00",
+      "6:00",
+      "7:00"
+    ]
+  },
+  "chart": { "type": "bar", "height": 800, "stacked": true },
+  "stroke": { "width": 1, "colors": ["#fff"] },
+  "plotOptions": { "bar": { "horizontal": false, "borderRadius": 10 } },
+  "fill": { "opacity": 1 },
+  "colors": [
+    "hsl(13, 100%, 50%)",
+    "hsl(213, 100%, 50%)",
+    "hsl(43, 100%, 50%)",
+    "hsl(225, 100%, 50%)",
+    "hsl(245, 100%, 50%)",
+    "hsl(31, 100%, 50%)",
+    "hsl(215, 100%, 50%)",
+    "hsl(46, 100%, 50%)",
+    "hsl(195, 100%, 50%)",
+    "hsl(238, 100%, 50%)",
+    "hsl(173, 100%, 50%)",
+    "hsl(254, 100%, 50%)"
+  ],
+  "legend": { "position": "top", "horizontalAlign": "left" }
+}

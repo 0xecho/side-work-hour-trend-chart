@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Job Postings Per Day - Daily Job Posting Trends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore daily job posting trends and statistics. Analyze the number of jobs posted per day with interactive charts."
+    />
+    <meta
+      name="keywords"
+      content="job postings, daily trends, job market, employment, charts, statistics"
+    />
+    <meta name="author" content="Elias Amha" />
+    <meta
+      property="og:title"
+      content="Job Postings Per Day - Daily Job Posting Trends"
+    />
+    <meta
+      property="og:description"
+      content="Explore daily job posting trends and statistics. Analyze the number of jobs posted per day with interactive charts."
+    />
+    <meta
+      property="og:image"
+      content="https://0xecho.github.io/side-work-hour-trend-chart/charts.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@oxecho" />
+    <meta
+      name="twitter:title"
+      content="Job Postings Per Day - Daily Job Posting Trends"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore daily job posting trends and statistics. Analyze the number of jobs posted per day with interactive charts."
+    />
+    <meta
+      name="twitter:image"
+      content="https://0xecho.github.io/side-work-hour-trend-chart/charts.png"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.0/apexcharts.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.0/apexcharts.min.css"
+    />
+    <style>
+      body {
+        background-color: #0065fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        min-height: 95vh;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+      }
+      .loader {
+        display: block;
+        height: 5px;
+        width: 5px;
+        color: #fff;
+        box-shadow: -10px -10px 0 5px, -10px -10px 0 5px, -10px -10px 0 5px,
+          -10px -10px 0 5px;
+        animation: loader-38 6s infinite;
+      }
+
+      @keyframes loader-38 {
+        0% {
+          box-shadow: -10px -10px 0 5px, -10px -10px 0 5px, -10px -10px 0 5px,
+            -10px -10px 0 5px;
+        }
+        8.33% {
+          box-shadow: -10px -10px 0 5px, 10px -10px 0 5px, 10px -10px 0 5px,
+            10px -10px 0 5px;
+        }
+        16.66% {
+          box-shadow: -10px -10px 0 5px, 10px -10px 0 5px, 10px 10px 0 5px,
+            10px 10px 0 5px;
+        }
+        24.99% {
+          box-shadow: -10px -10px 0 5px, 10px -10px 0 5px, 10px 10px 0 5px,
+            -10px 10px 0 5px;
+        }
+        33.32% {
+          box-shadow: -10px -10px 0 5px, 10px -10px 0 5px, 10px 10px 0 5px,
+            -10px -10px 0 5px;
+        }
+        41.65% {
+          box-shadow: 10px -10px 0 5px, 10px -10px 0 5px, 10px 10px 0 5px,
+            10px -10px 0 5px;
+        }
+        49.98% {
+          box-shadow: 10px 10px 0 5px, 10px 10px 0 5px, 10px 10px 0 5px,
+            10px 10px 0 5px;
+        }
+        58.31% {
+          box-shadow: -10px 10px 0 5px, -10px 10px 0 5px, 10px 10px 0 5px,
+            -10px 10px 0 5px;
+        }
+        66.64% {
+          box-shadow: -10px -10px 0 5px, -10px -10px 0 5px, 10px 10px 0 5px,
+            -10px 10px 0 5px;
+        }
+        74.97% {
+          box-shadow: -10px -10px 0 5px, 10px -10px 0 5px, 10px 10px 0 5px,
+            -10px 10px 0 5px;
+        }
+        83.3% {
+          box-shadow: -10px -10px 0 5px, 10px 10px 0 5px, 10px 10px 0 5px,
+            -10px 10px 0 5px;
+        }
+        91.63% {
+          box-shadow: -10px -10px 0 5px, -10px 10px 0 5px, -10px 10px 0 5px,
+            -10px 10px 0 5px;
+        }
+        100% {
+          box-shadow: -10px -10px 0 5px, -10px -10px 0 5px, -10px -10px 0 5px,
+            -10px -10px 0 5px;
+        }
+      }
+      .app {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 10px 0;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+      }
+
+      .row > .chart {
+        width: 75%;
+        height: 75%;
+        justify-self: end;
+      }
+
+      .row:nth-child(1) > div {
+        background-color: #dbbe7d;
+      }
+      .row:nth-child(2) > div {
+        background-color: #a3d2ca;
+      }
+      .row:nth-child(3) > div {
+        background-color: #e5e5e5;
+      }
+      .side {
+        flex: 0;
+        width: fit-content;
+        transform-origin: 0;
+        transform: rotate(-90deg);
+        font-family: "Courier New", Courier, monospace;
+        font-size: 3rem;
+        margin: 0 5rem;
+
+        @media (max-width: 768px) {
+          transform: rotate(0deg);
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <template id="afterFetch">
+      <div class="app">
+        <div class="row">
+          <div class="side">Morning</div>
+          <div class="chart" id="chart1"></div>
+        </div>
+        <div class="row">
+          <div class="side">Afternoon</div>
+          <div class="chart" id="chart2"></div>
+        </div>
+        <div class="row">
+          <div class="side">Night</div>
+          <div class="chart" id="chart3"></div>
+        </div>
+      </div>
+    </template>
+
+    <div id="initialLoading">
+      <span class="loader"></span>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetchChart("chart1Options", "chart1");
+      fetchChart("chart2Options", "chart2");
+      fetchChart("chart3Options", "chart3");
+    });
+
+    async function fetchChart(chartOptions, chartId) {
+      const baseUrl = window.location.href.split("/").slice(0, -1).join("/");
+      const response = await fetch(`${baseUrl}/${chartOptions}.json`);
+      const options = await response.json();
+
+      setTimeout(() => {
+        const chart = new ApexCharts(
+          document.querySelector(`#${chartId}`),
+          options
+        );
+        chart.render();
+      }, 1000);
+
+      if (document.querySelector("#initialLoading")) {
+        document.querySelector("#initialLoading").remove();
+      }
+      if (document.querySelector("#afterFetch")) {
+        const template = document.querySelector("#afterFetch");
+        const clone = template.content.cloneNode(true);
+        document.body.appendChild(clone);
+        document.querySelector("#afterFetch").remove();
+      }
+    }
+  </script>
+</html>
