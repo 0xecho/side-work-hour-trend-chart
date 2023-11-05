@@ -73,7 +73,7 @@
       "7:00"
     ]
   },
-  "chart": { "type": "bar", "height": 800, "stacked": true },
+  "chart": { "type": "bar", "height": 800, "width": "100%", "stacked": true },
   "stroke": { "width": 1, "colors": ["#fff"] },
   "plotOptions": { "bar": { "horizontal": false, "borderRadius": 10 } },
   "fill": { "opacity": 1 },
